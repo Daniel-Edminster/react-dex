@@ -8,7 +8,7 @@ class App extends Component {
     super();
     this.state = {
         dex: [],
-        dexFetched: false
+        dexFetched: false,
     };
   }
 
@@ -33,9 +33,7 @@ class App extends Component {
 
             if(i === 251) {
               dexArray.sort((e1, e2)=> {
-                  if (e1.id < e2.id) return -1;
-                  else if (e1.id > e2.id) return 1;
-                  else return 0;
+                  return parseInt(e1.id) - parseInt(e2.id);
               });
               this.setState({ dex: dexArray, dexFetched: true });
             }
@@ -58,8 +56,8 @@ class App extends Component {
                   <div className="DexLeftScreen__SpriteGrid">
                   
                   {this.state.dex.map((pokemon, i) => {
-                    console.log(pokemon, i); 
-                    return <div className="DexLeftScreen__SpriteGrid__Sprite"><img key={i} className="DexLeftScreen__SpriteGrid__img" src={pokemon.sprites.front_default} />  </div>
+                    // console.log(pokemon, i); 
+                    return <div key={pokemon.id}  data-dexnum={pokemon.id} className="DexLeftScreen__SpriteGrid__Sprite"><img className="DexLeftScreen__SpriteGrid__img" src={pokemon.sprites.front_default} />  </div>
                   }) }
                   </div>
               </div>
