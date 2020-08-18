@@ -32,7 +32,12 @@ class App extends Component {
             this.setState({ dex: dexArray });
 
             if(i === 251) {
-              this.setState({ dexFetched: true });
+              dexArray.sort((e1, e2)=> {
+                  if (e1.id < e2.id) return -1;
+                  else if (e1.id > e2.id) return 1;
+                  else return 0;
+              });
+              this.setState({ dex: dexArray, dexFetched: true });
             }
           }
         ).then(res  => console.log(this.state.dex));
@@ -47,8 +52,8 @@ class App extends Component {
           <div className="DexContainer">
 
             {this.state.dexFetched ? 
-
-            
+              <>
+              <div className="DexLeftHandle"></div>
               <div className="DexLeftScreen">
                   <div className="DexLeftScreen__SpriteGrid">
                   
@@ -58,6 +63,7 @@ class App extends Component {
                   }) }
                   </div>
               </div>
+              </>
               : 
               'not fetched'
             
