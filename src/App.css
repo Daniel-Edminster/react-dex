@@ -68,7 +68,19 @@
   
 }
 .DexRightHandle {
+  border: 4px solid #5e0000;
+  border-radius: 0 2em 2em 0;
   width: 75px;
+  /* background: #c00d0d; */
+  background: rgba(191,13,13,1);
+  background: -moz-linear-gradient(left, rgba(191,13,13,1) 0%, rgba(141,0,0,1) 100%);
+  background: -webkit-gradient(left top, right top, color-stop(0%, rgba(191,13,13,1)), color-stop(100%, rgba(141,0,0,1)));
+  background: -webkit-linear-gradient(left, rgba(191,13,13,1) 0%, rgba(141,0,0,1) 100%);
+  background: -o-linear-gradient(left, rgba(191,13,13,1) 0%, rgba(141,0,0,1) 100%);
+  background: -ms-linear-gradient(left, rgba(191,13,13,1) 0%, rgba(141,0,0,1) 100%);
+  background: linear-gradient(to right, rgba(191,13,13,1) 0%, rgba(141,0,0,1) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#bf0d0d', endColorstr='#8d0000', GradientType=1 );
+
 }
 .DexLeftScreen {
   background: #0f0f0f;
@@ -89,7 +101,7 @@
 
 .DexLeftScreen__SpriteGrid__Sprite {
   /* background: rgba(0,0,0,0.3); */
-  background: rgba(0, 36, 0, 0.5);
+  background: rgba(0, 12, 0, 0.5);
   margin: .1em;
 }
 

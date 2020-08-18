@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import './scanlines.css';
 import axios from 'axios';
 
 class App extends Component {
@@ -52,15 +53,19 @@ class App extends Component {
             {this.state.dexFetched ? 
               <>
               <div className="DexLeftHandle"></div>
-              <div className="DexLeftScreen">
+              <div className="DexLeftScreen scanlines">
                   <div className="DexLeftScreen__SpriteGrid">
                   
                   {this.state.dex.map((pokemon, i) => {
                     // console.log(pokemon, i); 
                     return <div key={pokemon.id}  data-dexnum={pokemon.id} className="DexLeftScreen__SpriteGrid__Sprite"><img className="DexLeftScreen__SpriteGrid__img" src={pokemon.sprites.front_default} />  </div>
                   }) }
+
+
                   </div>
               </div>
+              <div className="DexRightScreen"></div>
+              <div className="DexRightHandle"></div>
               </>
               : 
               'not fetched'
