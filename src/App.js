@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
 import './scanlines.css';
+import Mew from './img/mew.png';
+
 import axios from 'axios';
 
 class App extends Component {
@@ -30,18 +32,29 @@ class App extends Component {
         .then(res => {
             let dexArray = this.state.dex;
             dexArray.push(res.data);
-            this.setState({ dex: dexArray });
+            this.setState({ dex: dexArray }, this.sortDex);
 
-            if(i === 251) {
-              dexArray.sort((e1, e2)=> {
-                  return parseInt(e1.id) - parseInt(e2.id);
-              });
-              this.setState({ dex: dexArray, dexFetched: true });
-            }
+            // if(i === 251) {
+            //   dexArray.sort((e1, e2)=> {
+            //       return parseInt(e1.id) - parseInt(e2.id);
+            //   });
+            //   this.setState({ dex: dexArray, dexFetched: true });
+            // }
+
           }
         ).then(res  => console.log(this.state.dex));
       }
 
+  }
+
+  sortDex = () => {
+      if(this.state.dex.length === 251) {
+          let dexArray = this.state.dex;
+          dexArray.sort((e1, e2)=> {
+            return parseInt(e1.id) - parseInt(e2.id);
+          });
+          this.setState({ dex: dexArray, dexFetched: true });
+      }
   }
 
   render() {
@@ -74,6 +87,7 @@ class App extends Component {
 
           </div>
 
+              <div className="MewFooter"><img height="75" src={Mew} /></div>
       </div>
     );
   }

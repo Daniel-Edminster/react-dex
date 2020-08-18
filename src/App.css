@@ -2,6 +2,9 @@
   box-sizing: border-box;
 }
 
+body { 
+  background: #1f0000;
+}
 .App {
   text-align: center;
   
@@ -46,7 +49,7 @@
 .DexContainer {
     margin: 0 auto;
     /* background: #8e0000; */
-    background: rgb(233, 233, 233);
+    /* background: rgb(233, 233, 233); */
     max-width: 900px;
     max-height: 900px;
     color: #f0f0f0;
@@ -140,4 +143,11 @@
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
   background: #555;
+}
+
+.MewFooter {
+  position: absolute;
+  bottom:0;
+  right: 0;
+  height: 75px;
 }
