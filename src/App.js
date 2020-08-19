@@ -5,6 +5,7 @@ import './scanlines.css';
 import Mew from './img/mew.png';
 
 import axios from 'axios';
+import Spritebox from './components/SpriteBox/Spritebox';
 
 class App extends Component {
   constructor(){
@@ -70,13 +71,15 @@ class App extends Component {
                   <div className="DexLeftScreen__SpriteGrid">
                   
                   {this.state.dex.map((pokemon, i) => {
-                    // console.log(pokemon, i); 
-                    return <div key={pokemon.id}  data-dexnum={pokemon.id} className="DexLeftScreen__SpriteGrid__Sprite"><img className="DexLeftScreen__SpriteGrid__img" src={pokemon.sprites.front_default} />  </div>
-                  }) }
+
+                  return <Spritebox key={i} pokemon={pokemon} />
+
+                  })
+                }
 
 
                   </div>
-              </div>
+               </div>
               <div className="DexRightScreen"></div>
               <div className="DexRightHandle"></div>
               </>
