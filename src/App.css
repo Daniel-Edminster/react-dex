@@ -10,28 +10,6 @@ body {
   
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
 .App-link {
   color: #61dafb;
 }
@@ -104,15 +82,21 @@ body {
 
 .DexLeftScreen__SpriteGrid__Sprite {
   /* background: rgba(0,0,0,0.3); */
-  background: rgba(0, 12, 0, 0.5);
+  background: rgba(0, 12, 0, 0.2);
   margin: .1em;
 }
 
+.DexLeftScreen__SpriteGrid__img:hover {
+  border: 1px solid red;
+  cursor: pointer;
+  /* box-sizing: content-box; */
+  /* transition: 0.1s ease; */
+}
 .DexLeftScreen__SpriteGrid__img {
   width: 75px;
   /* border: 1px solid #f1f1f1; */
   
-  border-radius: 0.5em;
+  /* border-radius: 0.5em; */
   
 }
 

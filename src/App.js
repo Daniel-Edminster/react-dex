@@ -58,6 +58,12 @@ class App extends Component {
       }
   }
 
+
+  setDisplayCallback = event => {
+      console.log(event.currentTarget);
+      let id = event.currentTarget.getAttribute("data-dexnum");
+      this.setState({activePokemon: parseInt(id) });
+  }
   render() {
     return (
       <div className="App">
@@ -72,7 +78,7 @@ class App extends Component {
                   
                   {this.state.dex.map((pokemon, i) => {
 
-                  return <Spritebox key={i} pokemon={pokemon} />
+                  return <Spritebox click={this.setDisplayCallback} key={i} pokemon={pokemon} />
 
                   })
                 }
